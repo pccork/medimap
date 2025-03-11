@@ -1,0 +1,29 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>Email</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each institution.departments}}
+      <tr>
+        <td>
+          {{title}}
+        </td>
+        <td>
+          {{email}}
+        </td>
+        <td>
+          {{contact}}
+        </td>
+        <td>
+          <a href="/institution/{{../institution._id}}/deletedepartment/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
