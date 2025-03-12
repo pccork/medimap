@@ -25,20 +25,20 @@ if (result.error) {
 }
 
 
-
 async function init() {
   const server = Hapi.server({
     port: 3000,
     host: "localhost",
   });
-
+  
+  // enables templating in Hapi.js. 
+  // allows the server to render HTML views using engines like Handlebars
+  await server.register(Vision);
   // hapi-auth-cookie plugin, for session-based authentication
   //  not built-in required installed
   await server.register(Cookie);
 
-  // enables templating in Hapi.js. 
-  // allows the server to render HTML views using engines like Handlebars
-  await server.register(Vision);
+  
   server.validator(Joi);
 
   server.views({

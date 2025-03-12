@@ -12,12 +12,14 @@ export const webRoutes = [
   { method: "POST", path: "/register", config: accountsController.signup },
   { method: "POST", path: "/authenticate", config: accountsController.login },
 
+  { method: "GET", path: "/about", config: aboutController.index },
+
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addinstitution", config: dashboardController.addInstitution },
-  { method: "GET", path: "/about", config: aboutController.index },
-  { method: "GET", path: "/institution/{id}", config: institutionController.index },
-  { method: "POST", path: "/institution/{id}/adddepartment", config: institutionController.addDepartment },
   { method: "GET", path: "/dashboard/deleteinstitution/{id}", config: dashboardController.deleteInstitution },
+ 
+  { method: "GET", path: "/institution/{id}", config: institutionController.index },
+  { method: "POST", path: "/institution/{id}/adddepartment", config: institutionController.addDepartment }, 
   { method: "GET", path: "/institution/{id}/deletedepartment/{departmentid}", config: institutionController.deleteDepartment }
 
 ];
