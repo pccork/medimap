@@ -29,7 +29,7 @@ export const institutionController = {
         email: request.payload.email,
         contact: Number(request.payload.contact),
       };
-      await db.institutionStore.addDepartment(institution._id, newDepartment);
+      await db.departmentStore.addDepartment(institution._id, newDepartment);
       return h.redirect(`/institution/${institution._id}`);
     },
   },

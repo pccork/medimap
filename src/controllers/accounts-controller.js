@@ -20,6 +20,7 @@ export const accountsController = {
     auth: false,
     validate: {
       payload: UserSpec,
+      options: { abortEarly: false },
       failAction: function (request, h, error) {
         return h.view("signup-view", { title: "Sign up error" }).takeover().code(400);
       },
@@ -29,9 +30,7 @@ export const accountsController = {
       await db.userStore.addUser(user);
       return h.redirect("/");
     },
-  },
-
- 
+  }, 
   showLogin: {
     auth: false,
     handler: function (request, h) {
