@@ -41,8 +41,8 @@ export const maggie = {
   };
 
   export const muh = {
-    title: "Mercy University Hospital",
-    eircode: "T12 WE28",
+    title: "Cork University Hospital",
+    eircode: "T12 DC4A",
   };
 
 

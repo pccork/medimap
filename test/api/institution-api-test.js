@@ -13,7 +13,7 @@ suite("Institution API tests", () => {
     await medimapService.deleteAllInstitutions();
     await medimapService.deleteAllUsers();
     user = await medimapService.createUser(maggie);
-    mozart.userid = user._id;
+    cuh.userid = user._id;
   });
 
   teardown(async () => {});
@@ -21,7 +21,7 @@ suite("Institution API tests", () => {
   test("create institution", async () => {
     const returnedInstitution = await medimapService.createInstitution(cuh);
     assert.isNotNull(returnedInstitution);
-    assertSubset(mozart, returnedInstitution);
+    assertSubset(cuh, returnedInstitution);
   });
 
   test("delete a institution", async () => {

@@ -5,7 +5,7 @@ import { maggie, cuh, testInstitutions, testDepartments, renal } from "../fixtur
 
 suite("Department API tests", () => {
   let user = null;
-  let beethovenSonatas = null;
+  let renalDepartment = null;
 
   setup(async () => {
     await medimapService.deleteAllInstitutions();
@@ -13,20 +13,20 @@ suite("Department API tests", () => {
     await medimapService.deleteAllDepartments();
     user = await medimapService.createUser(maggie);
     cuh.userid = user._id;
-    beethovenSonatas = await medimapService.createInstitution(cuh);
+    renalDepartment = await medimapService.createInstitution(cuh);
   });
 
   teardown(async () => {});
 
   test("create department", async () => {
-    const returnedDepartment = await medimapService.createDepartment(beethovenSonatas._id, renal);
+    const returnedDepartment = await medimapService.createDepartment(renalDepartment._id, renal);
     assertSubset(renal, returnedDepartment);
   });
 
   test("create Multiple departments", async () => {
     for (let i = 0; i < testDepartments.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      await medimapService.createDepartment(beethovenSonatas._id, testDepartments[i]);
+      await medimapService.createDepartment(renalDepartment._id, testDepartments[i]);
     }
     const returnedDepartments = await medimapService.getAllDepartments();
     assert.equal(returnedDepartments.length, testDepartments.length);
@@ -40,7 +40,7 @@ suite("Department API tests", () => {
   test("Delete DepartmentApi", async () => {
     for (let i = 0; i < testDepartments.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      await medimapService.createDepartment(beethovenSonatas._id, testDepartments[i]);
+      await medimapService.createDepartment(renalDepartment._id, testDepartments[i]);
     }
     let returnedDepartments = await medimapService.getAllDepartments();
     assert.equal(returnedDepartments.length, testDepartments.length);
@@ -52,12 +52,12 @@ suite("Department API tests", () => {
     assert.equal(returnedDepartments.length, 0);
   });
 
-  test("denormalised playlist", async () => {
+  test("denormalised department", async () => {
     for (let i = 0; i < testDepartments.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      await medimapService.createDepartment(beethovenSonatas._id, testDepartments[i]);
+      await medimapService.createDepartment(renalDepartment._id, testDepartments[i]);
     }
-    const returnedInstitution = await medimapService.getInstitution(beethovenSonatas._id);
+    const returnedInstitution = await medimapService.getInstitution(renalDepartment._id);
     assert.equal(returnedInstitution.departments.length, testDepartments.length);
     for (let i = 0; i < testDepartments.length; i += 1) {
       assertSubset(testDepartments[i], returnedInstitution.departments[i]);
