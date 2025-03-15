@@ -1,39 +1,40 @@
 {
   "users": [
     {
-      "firstName": "Homer",
+      "_id": "73c48c48-c2e3-43e8-a700-929b3427b300",
+      "firstName": "Bart",
       "lastName": "Simpson",
-      "email": "homer@simpson.com",
+      "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "005e4cc6-5adf-45ad-a0b5-17eb4f0f08dc"
+      "__v": 0
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "d1204126-d88c-4587-831a-5c4ac0b2d29e"
+      "_id": "9cc16723-8cfd-4803-9df8-e9a46b4ba6a1"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "616f3821-55cf-48c2-ada4-7170013d85f9"
+      "_id": "4c77a39b-6431-4518-85de-285b94d27061"
     }
   ],
   "institutions": [
     {
       "title": "cuh",
-      "_id": "b60f84f1-6d3b-4e0e-8f7d-b880a9d3673b"
+      "_id": "42445d2d-7099-4916-993e-6e5bfda5e301"
     },
     {
       "title": "muh",
-      "_id": "8a2d2a23-9709-44d5-af86-ce4e0cf80300"
+      "_id": "6f0355c9-1275-4582-9fbf-b29c227d701a"
     },
     {
       "title": "si",
-      "_id": "04993a21-9757-419b-8cbd-d2112f1f7216"
+      "_id": "ba740693-bfd1-4b24-aa1b-b10412ab18e5"
     }
   ],
   "departments": [
@@ -41,22 +42,22 @@
       "title": "Renal Department",
       "email": "renal.cuh@hse.ie",
       "contact": 4123456,
-      "_id": "c1b62bdf-e713-4dbc-a977-1c896f8c9aeb",
-      "institutionid": "813bbc99-c057-473a-b216-8b868562a0d7"
+      "_id": "640836a0-5052-48bb-9e00-43b3c533c432",
+      "institutionid": "031c7d13-a90f-4067-bd26-7997ab2d47f3"
     },
     {
       "title": "Hepatology Department",
       "artist": "hepatology.cuh@hse.ie",
       "duration": 42345678,
-      "_id": "66d89bab-021e-489e-b2f2-feac7b99cac6",
-      "institutionid": "813bbc99-c057-473a-b216-8b868562a0d7"
+      "_id": "0766dcc2-271d-49dd-8060-9287bff23b11",
+      "institutionid": "031c7d13-a90f-4067-bd26-7997ab2d47f3"
     },
     {
       "title": "Respiratory Department",
       "artist": "respiratory.cuh@hse.ie",
       "duration": 43456789,
-      "_id": "a5e9a8cd-5843-40b7-bc6d-6f7efd010aab",
-      "institutionid": "813bbc99-c057-473a-b216-8b868562a0d7"
+      "_id": "124a898b-cdfc-4b42-a001-3595504d015f",
+      "institutionid": "031c7d13-a90f-4067-bd26-7997ab2d47f3"
     }
   ]
 }

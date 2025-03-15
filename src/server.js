@@ -4,7 +4,6 @@ import Vision from "@hapi/vision";
 import Handlebars from "handlebars";
 import path from "path";
 import { fileURLToPath } from "url";
-
 import dotenv from "dotenv";
 import Joi from "joi";
 import { webRoutes } from "./web-routes.js";
@@ -66,6 +65,7 @@ async function init() {
 
   db.init("mongo"); // enter mongo, json or leave blank to choose whcih data model to use
   server.route(webRoutes);
+  server.route(apiRoutes);
   await server.start();
   console.log("Server running on %s", server.info.uri);
 }
