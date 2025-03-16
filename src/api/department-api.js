@@ -1,6 +1,7 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-import { DepartmentSpec } from "../models/joi-schemas.js";
+import { IdSpec, DepartmentSpec, DepartmentSpecPlus, DepartmentArraySpec } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const departmentApi = {
   find: {
@@ -13,6 +14,11 @@ export const departmentApi = {
             return Boom.serverUnavailable("Database Error");
           }
     },
+    tags: ["api"],
+    response: { schema: DepartmentArraySpec, failAction: validationError },
+    description: "Get all departmentApi",
+    notes: "Returns all departmentApi",
+    
   },
 
   findOne: {
@@ -28,6 +34,11 @@ export const departmentApi = {
             return Boom.serverUnavailable("No department with this id");
           }
     },
+    tags: ["api"],
+    description: "Find a Department",
+    notes: "Returns a department",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: DepartmentSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -43,6 +54,11 @@ export const departmentApi = {
             return Boom.serverUnavailable("Database Error");
           }
     },
+    tags: ["api"],
+    description: "Create a department",
+    notes: "Returns the newly created department",
+    validate: { payload: DepartmentSpec },
+    response: { schema: DepartmentSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
@@ -56,21 +72,26 @@ export const departmentApi = {
           }
 
     },
+    tags: ["api"],
+    description: "Delete all departmentApi",
   },
 
   deleteOne: {
     auth: false,
     handler: async function (request, h) {
         try {
-            const track = await db.trackStore.getDepartmentById(request.params.id);
-            if (!track) {
+            const department = await db.departmentStore.getDepartmentById(request.params.id);
+            if (!department) {
               return Boom.notFound("No Department with this id");
             }
-            await db.trackStore.deleteDepartment(track._id);
+            await db.departmentStore.deleteDepartment(department._id);
             return h.response().code(204);
           } catch (err) {
             return Boom.serverUnavailable("No Department with this id");
           }
     },
+    tags: ["api"],
+    description: "Delete a department",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };

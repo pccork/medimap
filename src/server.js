@@ -1,7 +1,9 @@
 import Hapi from "@hapi/hapi";
 import Cookie from "@hapi/cookie";
 import Vision from "@hapi/vision";
+import Inert from "@hapi/inert";
 import Handlebars from "handlebars";
+import HapiSwagger from "hapi-swagger";
 import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
@@ -23,6 +25,13 @@ if (result.error) {
   process.exit(1);
 }
 
+const swaggerOptions = {
+  info: {
+    title: "Playtime API",
+    version: "0.1",
+  },
+};
+
 
 async function init() {
   const server = Hapi.server({
@@ -36,6 +45,16 @@ async function init() {
   // hapi-auth-cookie plugin, for session-based authentication
   //  not built-in required installed
   await server.register(Cookie);
+  await server.register(Inert);
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
+
 
   
   server.validator(Joi);

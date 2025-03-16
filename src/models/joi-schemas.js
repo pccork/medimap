@@ -21,13 +21,33 @@ export const UserSpec = Joi.object()
 export const UserArray = Joi.array().items(UserSpec).label("UserArray");
 
   
-  export const DepartmentSpec = {
-    title: Joi.string().required(),
-    email: Joi.string().required(),
-    contact: Joi.number().allow("").optional(),
-  };
+export const DepartmentSpec = Joi.object()
+.keys({
+  title: Joi.string().required().example("Renal"),
+  email: Joi.string().required().example("cuh@hse.ie"),
+  contact: Joi.number().allow("").optional().example(456789),
+  Institutionid: IdSpec,
+})
+.label("Department");
+
+export const DepartmentSpecPlus = DepartmentSpec.keys({
+_id: IdSpec,
+__v: Joi.number(),
+}).label("DepartmentPlus");
+
+export const DepartmentArraySpec = Joi.array().items(DepartmentSpecPlus).label("DepartmentArray");
   
-  export const InstitutionSpec = {
-    title: Joi.string().required(),
-    eircode: Joi.string().required(),
-  };
+  export const InstitutionSpec = Joi.object()
+  .keys({
+    title: Joi.string().required().example("Renal Department"),
+    userid: IdSpec,
+    departments: DepartmentArraySpec,
+  })
+  .label("Institution");
+
+export const InstitutionSpecPlus = InstitutionSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("InstitutionPlus");
+
+export const InstitutionArraySpec = Joi.array().items(InstitutionSpecPlus).label("InstitutionArray");

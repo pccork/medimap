@@ -1,6 +1,8 @@
 import Boom from "@hapi/boom";
-import { InstitutionSpec } from "../models/joi-schemas.js";
+import { IdSpec, InstitutionArraySpec, InstitutionSpec, InstitutionSpecPlus } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { validationError } from "./logger.js";
+
 
 export const institutionApi = {
   find: {
@@ -13,6 +15,10 @@ export const institutionApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    response: { schema: InstitutionArraySpec, failAction: validationError },
+    description: "Get all institutions",
+    notes: "Returns all institutions",
   },
 
   findOne: {
@@ -28,6 +34,11 @@ export const institutionApi = {
         return Boom.serverUnavailable("No Institution with this id");
       }
     },
+    tags: ["api"],
+    description: "Find a Institution",
+    notes: "Returns a institution",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: InstitutionSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -44,6 +55,11 @@ export const institutionApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a Institution",
+    notes: "Returns the newly created institution",
+    validate: { payload: InstitutionSpec, failAction: validationError },
+    response: { schema: InstitutionSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -60,6 +76,9 @@ export const institutionApi = {
         return Boom.serverUnavailable("No Institution with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a institution",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
   deleteAll: {
@@ -72,5 +91,7 @@ export const institutionApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Delete all InstitutionApi",
   },
 };

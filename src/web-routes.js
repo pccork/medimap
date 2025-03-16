@@ -5,6 +5,7 @@ import { institutionController } from "./controllers/institution-controller.js";
 
   
 export const webRoutes = [
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
   { method: "GET", path: "/", config: accountsController.index },
   { method: "GET", path: "/signup", config: accountsController.showSignup },
   { method: "GET", path: "/login", config: accountsController.showLogin },
