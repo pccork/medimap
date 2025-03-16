@@ -62,17 +62,17 @@ export const maggie = {
   export const testDepartments = [
     {
       "title": "Renal Department",
-      "email": "renal.cuh@hse.ie",
+      "email": "cuh@hse.ie",
       "contact": 4123456
     },
     {
       "title": "Hepatology Department",
-      "artist": "hepatology.cuh@hse.ie",
-      "duration": 42345678
+      "email": "cuh@hse.ie",
+      "contact": 42345678
     },
     {
       "title": "Respiratory Department",
-      "artist": "respiratory.cuh@hse.ie",
-      "duration": 43456789
+      "email": "cuh@hse.ie",
+      "contact": 43456789
     }
   ];

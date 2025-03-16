@@ -1,7 +1,7 @@
 import axios from "axios";
-
 import { serviceUrl } from "../fixtures.js";
 
+// service act as a gateway to API using axios to create dispatch/ accept HTTP requests just like postman
 export const medimapService = {
   medimapUrl: serviceUrl,
 

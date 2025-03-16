@@ -15,7 +15,7 @@ suite("Department API tests", () => {
     cuh.userid = user._id;
     renalDepartment = await medimapService.createInstitution(cuh);
   });
-
+  //  Closing connections, removing test data
   teardown(async () => {});
 
   test("create department", async () => {
@@ -37,7 +37,7 @@ suite("Department API tests", () => {
     }
   });
 
-  test("Delete DepartmentApi", async () => {
+  test("delete DepartmentApi", async () => {
     for (let i = 0; i < testDepartments.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
       await medimapService.createDepartment(renalDepartment._id, testDepartments[i]);
@@ -46,7 +46,7 @@ suite("Department API tests", () => {
     assert.equal(returnedDepartments.length, testDepartments.length);
     for (let i = 0; i < returnedDepartments.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      const department = await medimapService.deleteDepartment(returnedDepartments[i]._id);
+      const department = await medimapService.deleteAllDepartments(returnedDepartments[i]._id);
     }
     returnedDepartments = await medimapService.getAllDepartments();
     assert.equal(returnedDepartments.length, 0);

@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "_id": "73c48c48-c2e3-43e8-a700-929b3427b300",
+      "_id": "66482bc6-c0e2-4adc-b705-87f6a240705b",
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
@@ -13,51 +13,22 @@
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "9cc16723-8cfd-4803-9df8-e9a46b4ba6a1"
+      "_id": "fb991c44-7f51-46ff-8970-2285e30430d5"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "4c77a39b-6431-4518-85de-285b94d27061"
+      "_id": "c797d870-c1f4-4b5f-b6ab-58e0e007d641"
     }
   ],
   "institutions": [
     {
-      "title": "cuh",
-      "_id": "42445d2d-7099-4916-993e-6e5bfda5e301"
-    },
-    {
-      "title": "muh",
-      "_id": "6f0355c9-1275-4582-9fbf-b29c227d701a"
-    },
-    {
-      "title": "si",
-      "_id": "ba740693-bfd1-4b24-aa1b-b10412ab18e5"
+      "title": "Cork University Hospital",
+      "eircode": "T12 DC4A",
+      "_id": "33e5c548-b8d4-4087-b3a3-93fcb8b83993"
     }
   ],
-  "departments": [
-    {
-      "title": "Renal Department",
-      "email": "renal.cuh@hse.ie",
-      "contact": 4123456,
-      "_id": "640836a0-5052-48bb-9e00-43b3c533c432",
-      "institutionid": "031c7d13-a90f-4067-bd26-7997ab2d47f3"
-    },
-    {
-      "title": "Hepatology Department",
-      "artist": "hepatology.cuh@hse.ie",
-      "duration": 42345678,
-      "_id": "0766dcc2-271d-49dd-8060-9287bff23b11",
-      "institutionid": "031c7d13-a90f-4067-bd26-7997ab2d47f3"
-    },
-    {
-      "title": "Respiratory Department",
-      "artist": "respiratory.cuh@hse.ie",
-      "duration": 43456789,
-      "_id": "124a898b-cdfc-4b42-a001-3595504d015f",
-      "institutionid": "031c7d13-a90f-4067-bd26-7997ab2d47f3"
-    }
-  ]
+  "departments": []
 }
