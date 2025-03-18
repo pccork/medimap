@@ -1,34 +1,68 @@
 {
   "users": [
     {
-      "_id": "66482bc6-c0e2-4adc-b705-87f6a240705b",
-      "firstName": "Bart",
+      "firstName": "Homer",
       "lastName": "Simpson",
-      "email": "bart@simpson.com",
+      "email": "homer@simpson.com",
       "password": "secret",
-      "__v": 0
+      "_id": "3fccfbee-8846-488b-bbaf-1a88b832ee95"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "fb991c44-7f51-46ff-8970-2285e30430d5"
+      "_id": "dc6d4bd7-03bf-4a2d-a2b6-7bda02f67ccf"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "c797d870-c1f4-4b5f-b6ab-58e0e007d641"
+      "_id": "d9e619d3-98c0-41c0-8d5f-8b618f7723bb"
     }
   ],
   "institutions": [
     {
-      "title": "Cork University Hospital",
+      "title": "cuh",
+      "eircode": "T12 DC12",
+      "userid": "67d9e37e42c1af3e89b681b4",
+      "_id": "adee90ab-0eda-4a6b-93a1-ddb9201c5434"
+    },
+    {
+      "title": "muh",
       "eircode": "T12 DC4A",
-      "_id": "33e5c548-b8d4-4087-b3a3-93fcb8b83993"
+      "userid": "67d9e37e42c1af3e89b681b4",
+      "_id": "92916fab-2a37-4fcc-b44d-055c9b4e9dce"
+    },
+    {
+      "title": "kuh",
+      "eircode": "T12 DC4A",
+      "userid": "67d9e37e42c1af3e89b681b4",
+      "_id": "b4391519-ec0d-4846-ab33-7aae5e7c1791"
     }
   ],
-  "departments": []
+  "departments": [
+    {
+      "title": "renal",
+      "email": "cuh@hse.ie",
+      "contact": 45678,
+      "_id": "d915c3e8-9bcb-4b0d-af2d-c131b5ceea18",
+      "institutionid": "6d8c0f97-e090-48bd-b798-007aca2dee98"
+    },
+    {
+      "title": "liver",
+      "email": "cuh@hse.ie",
+      "contact": 42345678,
+      "_id": "1064fe7e-f40d-42ea-ace8-148a1d4fa83b",
+      "institutionid": "6d8c0f97-e090-48bd-b798-007aca2dee98"
+    },
+    {
+      "title": "icu",
+      "email": "cuh@hse.ie",
+      "contact": 43456789,
+      "_id": "e820b690-128b-4f23-9d73-61456ddb5f60",
+      "institutionid": "6d8c0f97-e090-48bd-b798-007aca2dee98"
+    }
+  ]
 }

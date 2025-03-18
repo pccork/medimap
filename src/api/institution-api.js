@@ -6,7 +6,9 @@ import { validationError } from "./logger.js";
 
 export const institutionApi = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const institutions = await db.institutionStore.getAllInstitutions();
@@ -22,7 +24,9 @@ export const institutionApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const institution = await db.institutionStore.getInstitutionById(request.params.id);
@@ -42,7 +46,9 @@ export const institutionApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const institution = request.payload;
@@ -63,7 +69,9 @@ export const institutionApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const institution = await db.institutionStore.getInstitutionById(request.params.id);
@@ -82,7 +90,9 @@ export const institutionApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.institutionStore.deleteAllInstitutions();

@@ -2,7 +2,7 @@ import { EventEmitter } from "events";
 import { assert } from "chai";
 import { medimapService } from "./medimap-service.js";
 import { assertSubset } from "../test-utils.js";
-import { maggie, cuh, testInstitutions } from "../fixtures.js";
+import { maggie, cuh, testInstitutions, maggieCredentials } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -10,9 +10,13 @@ suite("Institution API tests", () => {
   let user = null;
 
   setup(async () => {
+    medimapService.clearAuth();
+    user = await medimapService.createUser(maggie);
+    await medimapService.authenticate(maggieCredentials);
     await medimapService.deleteAllInstitutions();
     await medimapService.deleteAllUsers();
     user = await medimapService.createUser(maggie);
+    await medimapService.authenticate(maggieCredentials);
     cuh.userid = user._id;
   });
 

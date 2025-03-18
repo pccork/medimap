@@ -1,10 +1,11 @@
 import axios from "axios";
-import { serviceUrl } from "../fixtures.js";
+import { maggie,serviceUrl } from "../fixtures.js";
 
 // service act as a gateway to API using axios to create dispatch/ accept HTTP requests just like postman
 export const medimapService = {
   medimapUrl: serviceUrl,
 
+  
   async createUser(user) {
     const res = await axios.post(`${this.medimapUrl}/api/users`, user);
     return res.data;
@@ -74,4 +75,15 @@ export const medimapService = {
     const res = await axios.delete(`${this.medimapUrl}/api/departments/${id}`);
     return res.data;
   },
+
+  async authenticate(user) {
+    const response = await axios.post(`${this.medimapUrl}/api/users/authenticate`, user);
+    axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+    return response.data;
+    
+  },
+
+  async clearAuth() {
+    axios.defaults.headers.common["Authorization"] = "";
+  },  
 };

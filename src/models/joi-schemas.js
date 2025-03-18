@@ -2,48 +2,57 @@ import Joi from "joi";
 
 export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
 
-export const UserCredentialsSpec = {
-  email: Joi.string().email().required(),
-  password: Joi.string().required()
-};
-
-export const UserSpec = Joi.object()
+export const JwtAuth = Joi.object()
   .keys({
-    firstName: Joi.string().example("Homer").required(),
-    lastName: Joi.string().example("Simpson").required(),
-    email: Joi.string().email().example("homer@simpson.com").required(),
-    password: Joi.string().example("secret").required(),
-    _id: IdSpec,
-    __v: Joi.number()
+    success: Joi.boolean().example("true").required(),
+    token: Joi.string().example("eyJhbGciOiJND.g5YmJisIjoiaGYwNTNjAOhE.gCWGmY5-YigQw0DCBo").required(),
   })
-  .label("UserDetails");
+  .label("JwtAuth");
 
-export const UserArray = Joi.array().items(UserSpec).label("UserArray");
+
+export const UserCredentialsSpec = Joi.object()
+  .keys({
+    email: Joi.string().email().example("maggie@simpson.com").required(),
+    password: Joi.string().example("secret").required(),
+  })
+  .label("UserCredentials");
+
+export const UserSpec = UserCredentialsSpec.keys({
+  firstName: Joi.string().example("maggie").required(),
+  lastName: Joi.string().example("Simpson").required(),
+}).label("UserDetails");
+
+export const UserSpecPlus = UserSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("UserDetailsPlus");
+
+export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
   
 export const DepartmentSpec = Joi.object()
-.keys({
-  title: Joi.string().required().example("Renal"),
-  email: Joi.string().required().example("cuh@hse.ie"),
-  contact: Joi.number().allow("").optional().example(456789),
-  Institutionid: IdSpec,
-})
-.label("Department");
+  .keys({
+    title: Joi.string().required().example("renal"),
+    email: Joi.string().required().example("cuh@hse.ie"),
+    contact: Joi.number().allow("").optional().example(45678),
+    institutionid: IdSpec,
+  })
+  .label("Department");
 
 export const DepartmentSpecPlus = DepartmentSpec.keys({
-_id: IdSpec,
-__v: Joi.number(),
+  _id: IdSpec,
+  __v: Joi.number(),
 }).label("DepartmentPlus");
 
 export const DepartmentArraySpec = Joi.array().items(DepartmentSpecPlus).label("DepartmentArray");
   
-  export const InstitutionSpec = Joi.object()
+export const InstitutionSpec = Joi.object()
   .keys({
-    title: Joi.string().required().example("Renal Department"),
+    title: Joi.string().required().example("cuh"),
+    eircode: Joi.string().required().example("T12WE28"),
     userid: IdSpec,
     departments: DepartmentArraySpec,
-  })
-  .label("Institution");
+}).label("Institution");
 
 export const InstitutionSpecPlus = InstitutionSpec.keys({
   _id: IdSpec,

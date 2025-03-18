@@ -8,10 +8,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import Joi from "joi";
+import jwt from "hapi-auth-jwt2";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { apiRoutes } from "./api-routes.js";
+import { validate } from "./api/jwt-utils.js";
 
 
 // to get current file name and directory name in ESModules
@@ -28,9 +30,18 @@ if (result.error) {
 const swaggerOptions = {
   info: {
     title: "Playtime API",
-    version: "0.1",
+    version: "0.1"
   },
+  securityDefinitions: {
+    jwt: {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header"
+    }
+  },
+  security: [{ jwt: [] }]
 };
+
 
 
 async function init() {
@@ -38,7 +49,8 @@ async function init() {
     port: 3000,
     host: "localhost",
   });
-  
+
+  await server.register(jwt);
   // enables templating in Hapi.js. 
   // allows the server to render HTML views using engines like Handlebars
   await server.register(Vision);
@@ -80,6 +92,14 @@ async function init() {
     redirectTo: "/",
     validate: accountsController.validate,
   });
+  server.auth.strategy("jwt", "jwt", {
+    key: process.env.cookie_password,
+    validate: validate,
+    verifyOptions: { algorithms: ["HS256"] }
+  });
+
+
+
   server.auth.default("session");
 
   db.init("mongo"); // enter mongo, json or leave blank to choose whcih data model to use

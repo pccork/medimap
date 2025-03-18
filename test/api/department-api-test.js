@@ -1,21 +1,25 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { medimapService } from "./medimap-service.js";
-import { maggie, cuh, testInstitutions, testDepartments, renal } from "../fixtures.js";
+import { maggie, cuh, testInstitutions, testDepartments, renal, maggieCredentials } from "../fixtures.js";
 
 suite("Department API tests", () => {
   let user = null;
   let renalDepartment = null;
 
   setup(async () => {
-    await medimapService.deleteAllInstitutions();
-    await medimapService.deleteAllUsers();
-    await medimapService.deleteAllDepartments();
+    medimapService.clearAuth();
     user = await medimapService.createUser(maggie);
+    await medimapService.authenticate(maggieCredentials);
+    await medimapService.deleteAllInstitutions();
+    await medimapService.deleteAllDepartments();
+    await medimapService.deleteAllUsers();
+    user = await medimapService.createUser(maggie);
+    await medimapService.authenticate(maggieCredentials);
     cuh.userid = user._id;
     renalDepartment = await medimapService.createInstitution(cuh);
   });
-  //  Closing connections, removing test data
+  
   teardown(async () => {});
 
   test("create department", async () => {

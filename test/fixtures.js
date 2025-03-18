@@ -1,11 +1,17 @@
 export const serviceUrl = "http://localhost:3000";
 
-export const maggie = {
+ export const maggie = {
     firstName: "Maggie",
     lastName: "Simpson",
     email: "maggie@simpson.com",
     password: "secret",
   };
+
+  export const maggieCredentials = {
+    email: "maggie@simpson.com",
+    password: "secret"
+  };
+  
   
   export const testUsers = [
     {
@@ -30,14 +36,14 @@ export const maggie = {
 
   export const cuh = {
     title: "Cork University Hospital",
-    eircode: "T12 DC4A",
+    eircode: "T12WE28",
   };
 
  
   export const renal = {
-    "title": "renal Department",
-    "email": "renal.cuh@hse.ie",
-    "contact": 4123456
+    "title": "renal",
+    "email": "cuh@hse.ie",
+    "contact": 45678
   };
 
   export const muh = {
@@ -49,29 +55,32 @@ export const maggie = {
   
   export const testInstitutions = [
     {
-      title: "cuh"
+      title: "cuh",
+      eircode: "T12 DC12",
     },
     {
-      title: "muh"
+      title: "muh",
+      eircode: "T12 DC4A",
     },
     {
-      title: "si"
+      title: "kuh",
+      eircode: "T12 DC4A",
     }
   ];
 
   export const testDepartments = [
     {
-      "title": "Renal Department",
+      "title": "renal",
       "email": "cuh@hse.ie",
-      "contact": 4123456
+      "contact": 45678
     },
     {
-      "title": "Hepatology Department",
+      "title": "liver",
       "email": "cuh@hse.ie",
       "contact": 42345678
     },
     {
-      "title": "Respiratory Department",
+      "title": "icu",
       "email": "cuh@hse.ie",
       "contact": 43456789
     }
