@@ -1,9 +1,9 @@
 {
   "name": "medimap",
   "version": "1.0.0",
-  "description": "",
+  "description": "A medimap app for the HDip in Computer, WIT",
   "license": "ISC",
-  "author": "",
+  "author": "Peter Chuk",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -14,6 +14,18 @@
     "testmodels": "./node_modules/mocha/bin/_mocha --ui tdd test/models/**/*.js -exit",
     "testapi": "./node_modules/mocha/bin/_mocha --ui tdd test/api/**/*.js -exit"
   },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pccork/medimap"
+  },
+
+  "engines": {
+    "node": ">=16"
+  },
+
+
+
   "devDependencies": {
     "arkit": "^1.6.4",
     "axios": "^1.7.9",

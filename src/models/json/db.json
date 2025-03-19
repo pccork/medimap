@@ -26,20 +26,17 @@
     {
       "title": "cuh",
       "eircode": "T12 DC12",
-      "userid": "67d9e37e42c1af3e89b681b4",
-      "_id": "adee90ab-0eda-4a6b-93a1-ddb9201c5434"
+      "_id": "f93e86bf-a3cf-470d-a947-1ba875ed75ee"
     },
     {
       "title": "muh",
       "eircode": "T12 DC4A",
-      "userid": "67d9e37e42c1af3e89b681b4",
-      "_id": "92916fab-2a37-4fcc-b44d-055c9b4e9dce"
+      "_id": "d3d611ae-e381-4600-88bd-aa1507851984"
     },
     {
       "title": "kuh",
       "eircode": "T12 DC4A",
-      "userid": "67d9e37e42c1af3e89b681b4",
-      "_id": "b4391519-ec0d-4846-ab33-7aae5e7c1791"
+      "_id": "deda6a6b-ccbc-4437-9eeb-41eead985d1c"
     }
   ],
   "departments": [
@@ -47,22 +44,22 @@
       "title": "renal",
       "email": "cuh@hse.ie",
       "contact": 45678,
-      "_id": "d915c3e8-9bcb-4b0d-af2d-c131b5ceea18",
-      "institutionid": "6d8c0f97-e090-48bd-b798-007aca2dee98"
+      "_id": "6375b987-cdf4-4ce9-b4b1-a9db5d99022a",
+      "institutionid": "03e454e2-86a3-4bde-98b7-0cafd97210e3"
     },
     {
       "title": "liver",
       "email": "cuh@hse.ie",
       "contact": 42345678,
-      "_id": "1064fe7e-f40d-42ea-ace8-148a1d4fa83b",
-      "institutionid": "6d8c0f97-e090-48bd-b798-007aca2dee98"
+      "_id": "bc8f1a05-5054-435b-8346-6e48e03a74cd",
+      "institutionid": "03e454e2-86a3-4bde-98b7-0cafd97210e3"
     },
     {
       "title": "icu",
       "email": "cuh@hse.ie",
       "contact": 43456789,
-      "_id": "e820b690-128b-4f23-9d73-61456ddb5f60",
-      "institutionid": "6d8c0f97-e090-48bd-b798-007aca2dee98"
+      "_id": "4ff34cd1-0430-4ad8-9511-a02ca4bb0cb6",
+      "institutionid": "03e454e2-86a3-4bde-98b7-0cafd97210e3"
     }
   ]
 }

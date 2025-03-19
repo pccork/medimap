@@ -34,6 +34,7 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+  
   deleteInstitution: {
     handler: async function (request, h) {
       const institution = await db.institutionStore.getInstitutionById(request.params.id);
