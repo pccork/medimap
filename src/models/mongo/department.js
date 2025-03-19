@@ -6,6 +6,7 @@ const departmentSchema = new Schema({
   title: String,
   email: String,
   contact: Number,
+  date: Date,
   institutionid: {
     type: Schema.Types.ObjectId,
     ref: "Institution",

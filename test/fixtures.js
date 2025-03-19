@@ -43,7 +43,8 @@ export const serviceUrl = "http://localhost:3000";
   export const renal = {
     "title": "renal",
     "email": "cuh@hse.ie",
-    "contact": 45678
+    "contact": 45678,
+    "date": "2025-03-19",
   };
 
   export const muh = {
@@ -72,16 +73,19 @@ export const serviceUrl = "http://localhost:3000";
     {
       "title": "renal",
       "email": "cuh@hse.ie",
-      "contact": 45678
+      "contact": 45678,
+      "date": "2025-03-19"
     },
     {
       "title": "liver",
       "email": "cuh@hse.ie",
-      "contact": 42345678
+      "contact": 42345678,
+      "date": "2025-03-19"
     },
     {
       "title": "icu",
       "email": "cuh@hse.ie",
-      "contact": 43456789
+      "contact": 43456789,
+      "date": "2025-03-19"
     }
   ];

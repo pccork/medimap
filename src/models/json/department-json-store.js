@@ -78,6 +78,7 @@ export const departmentJsonStore = {
     department.title = updatedDepartment.title;
     department.email = updatedDepartment.email;
     department.contact = updatedDepartment.contact;
+    department.date = updatedDepartment.date;
     await db.write();
   },
 };

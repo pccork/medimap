@@ -28,6 +28,7 @@ export const institutionController = {
         title: request.payload.title,
         email: request.payload.email,
         contact: Number(request.payload.contact),
+        date: date(request.payload.date)
       };
       await db.departmentStore.addDepartment(institution._id, newDepartment);
       return h.redirect(`/institution/${institution._id}`);

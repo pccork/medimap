@@ -44,6 +44,7 @@
       "title": "renal",
       "email": "cuh@hse.ie",
       "contact": 45678,
+      "date":"2025-03-19",
       "_id": "6375b987-cdf4-4ce9-b4b1-a9db5d99022a",
       "institutionid": "03e454e2-86a3-4bde-98b7-0cafd97210e3"
     },
@@ -51,6 +52,7 @@
       "title": "liver",
       "email": "cuh@hse.ie",
       "contact": 42345678,
+      "date":"2025-03-19",
       "_id": "bc8f1a05-5054-435b-8346-6e48e03a74cd",
       "institutionid": "03e454e2-86a3-4bde-98b7-0cafd97210e3"
     },
@@ -58,6 +60,7 @@
       "title": "icu",
       "email": "cuh@hse.ie",
       "contact": 43456789,
+      "date":"2025-03-19",
       "_id": "4ff34cd1-0430-4ad8-9511-a02ca4bb0cb6",
       "institutionid": "03e454e2-86a3-4bde-98b7-0cafd97210e3"
     }

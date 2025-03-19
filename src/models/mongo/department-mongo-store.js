@@ -45,6 +45,7 @@ export const departmentMongoStore = {
     departmentDoc.title = updatedDepartment.title;
     departmentDoc.email = updatedDepartment.email;
     departmentDoc.contact = updatedDepartment.contact;
+    departmentDoc.date = updatedDepartment.date;
     await departmentDoc.save();
   },
 };

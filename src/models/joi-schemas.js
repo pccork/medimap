@@ -35,6 +35,7 @@ export const DepartmentSpec = Joi.object()
     title: Joi.string().required().example("renal"),
     email: Joi.string().required().example("cuh@hse.ie"),
     contact: Joi.number().allow("").optional().example(45678),
+    date: Joi.date().required().example("2025-03-19"),
     institutionid: IdSpec,
   })
   .label("Department");
