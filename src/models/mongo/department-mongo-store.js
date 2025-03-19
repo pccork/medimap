@@ -1,6 +1,7 @@
 import { Department } from "./department.js";
 import { Institution } from "./institution.js";
 
+
 export const departmentMongoStore = {
   async getAllDepartments() {
     const departments = await Department.find().lean();

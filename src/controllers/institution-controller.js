@@ -37,7 +37,7 @@ export const institutionController = {
   deleteDepartment: {
     handler: async function(request, h) {
       const institution = await db.institutionStore.getInstitutionById(request.params.id);
-      await db.institutionStore.deleteDepartment(request.params.departmentid);
+      await db.departmentStore.deleteDepartment(request.params.departmentid);
       return h.redirect(`/institution/${institution._id}`);
     },
   },
