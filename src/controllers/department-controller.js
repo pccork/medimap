@@ -30,10 +30,14 @@ export const departmentController = {
         title: request.payload.title,
         email: request.payload.email,
         contact: Number(request.payload.contact),
-        date: Date(request.payload.date)
+        date: new Date(request.payload.date),
+                
       };
       await db.departmentStore.updateDepartment(department, newDepartment);
       return h.redirect(`/Institution/${request.params.id}`);
+      
+    
+
     },
   },
 };
