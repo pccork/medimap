@@ -1,20 +1,28 @@
 <form class="box" action="/institution/{{institution._id}}/adddepartment" method="POST">
   <label>Enter Department Details:</label>
-  <div class="field is-horizontal">
-    <div class="field-body">
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Title" name="title">
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter Email" name="email">
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="Enter contact" name="contact">
-      </div>
-      <div class="field">
-        <input class="input" type="text" placeholder="yyyy-mm-dd" name="date">
+
+  <div class="container">
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <!-- First input field (Title) -->
+        <div class="field column is-one-quarter">
+          <input class="input" type="text" placeholder="Enter Title" name="title">
+        </div>
+        <!-- Second input field (Email) -->
+        <div class="field column is-one-quarter">
+          <input class="input" type="text" placeholder="Enter Email" name="email">
+        </div>
+        <!-- Third input field (Contact) -->
+        <div class="field column is-one-quarter">
+          <input class="input" type="text" placeholder="Enter Contact" name="contact">
+        </div>
+        <!-- Fourth input field (Date) -->
+        <div class="field column is-one-quarter">
+          <input class="input" type="text" placeholder="yyyy-mm-dd" name="date">
+        </div>
       </div>
     </div>
   </div>
+
   <button class="button is-primary">Add Department</button>
 </form>

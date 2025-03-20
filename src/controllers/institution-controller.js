@@ -5,6 +5,7 @@ export const institutionController = {
   index: {
     handler: async function (request, h) {
       const institution = await db.institutionStore.getInstitutionById(request.params.id);
+
       const viewData = {
         title: "Institution",
         eircode: "eircode",
@@ -28,7 +29,7 @@ export const institutionController = {
         title: request.payload.title,
         email: request.payload.email,
         contact: Number(request.payload.contact),
-        date: date(request.payload.date)
+        date: Date(request.payload.date) //  use Date() expression to create a date object
       };
       await db.departmentStore.addDepartment(institution._id, newDepartment);
       return h.redirect(`/institution/${institution._id}`);
